@@ -9,24 +9,26 @@ public class GuessNumber {
 
         Random r = new Random();
         int rnd = r.nextInt((10)+1);
-
-        System.out.print("Enter number between 1-10: ");
-
+        System.out.println(rnd);
         Scanner sc = new Scanner(System.in);
-        int x = sc.nextInt();
+        int x = 0;
+
+
+        do {
+            System.out.print("Enter number between 1-10: ");
+            x = sc.nextInt();
+
+            if (x > rnd) {
+                System.out.println("guess a smaller number");
+
+            } else if (x < rnd) {
+                System.out.println("guess a greater number");
+            }
+
+        } while (x != rnd);
+        System.out.println("!!!YOU WIN!!!");
+
 
         sc.close();
-
-        if (x == rnd) {
-            System.out.println("!!!YOU WIN!!!");
-        } else if (x > rnd){
-            System.out.println("guess a smaller number");
-        } else {
-            System.out.println("guess a greater number");
-        }
-
-
-        System.out.println(rnd);
-
     }
 }
